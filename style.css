@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');  //Fonts uploaded
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');  /*Fonts uploaded*/
 *{
     margin: 0;
     padding: 0;
@@ -12,7 +12,8 @@ body{
     justify-content: center;
     align-items: center;
     background: linear-gradient(45deg, #0a0a0a, #3a4452);
-}//body of whole calculator
+} /*body of whole calculator*/
+
 .calculator{
     border: 1px solid #717377;
     padding: 10px;
@@ -57,7 +58,8 @@ button{
     width: 234px;
     height:60px;
     border-radius: 20px;
-}
+} /*Equal Button design*/
+
 .operator{
     color: #6dee0a;
 }
@@ -72,4 +74,4 @@ button{
     font-size: 28px;
     box-shadow: -8px -8px 15px rgba(255, 255, 255, 0.1);
     cursor: pointer;
-}//For Hexadecimal buttons
+}/*For Hexadecimal buttons*/
