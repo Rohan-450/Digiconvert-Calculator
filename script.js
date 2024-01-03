@@ -133,9 +133,17 @@ arr.forEach(button => {
             string = string.substring(0, string.length-1);
             inputs.forEach(input => input.value = string);
         }
-        else{
+        //Not allowing DEC, BIN, OCT, HEX to be treated as an Input
+        else if(e.target.innerHTML != 'DEC' && e.target.innerHTML != 'BIN' && e.target.innerHTML != 'OCT' && e.target.innerHTML != 'HEX' ){
             string += e.target.innerHTML;
             inputs.forEach(input => input.value = string);
+        }
+        //Adding Functionality to mode[0] that is: DEC
+        if(!inputs[0].disabled)
+        {
+            inputs[1].value = Number(inputs[0].value).toString(2);
+            inputs[2].value = Number(inputs[0].value).toString(16);
+            inputs[3].value = Number(inputs[0].value).toString(8);
         }
     })
 });
