@@ -1,9 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');  /*Fonts uploaded*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 body{
     width: 100%;
@@ -11,15 +13,26 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(45deg, #0a0a0a, #3a4452);
+    background: linear-gradient(to right, rgb(15, 23, 42), rgb(88, 28, 135), rgb(15, 23, 42));
+    margin:0;
 } /*body of whole calculator*/
 
 .calculator{
     border: 1px solid #717377;
     padding: 10px;
-    border-radius: 16px;
-    background: transparent;
+   
+    background: transparent; /* Semi-transparent white */
+    backdrop-filter: blur(10px); /* Blur the background */
+    border-radius: 15px; 
     box-shadow: 0px 3px 15px rgba(0, 0, 0, 0.5);
+    position: absolute;
+    /* left: -100%;  */
+    top: 20px;
+    animation: slideIn 2s forwards; 
+    justify-content: center;
+    align-items: center;
+    
+    gap: 5px;
 }
 input{
     width: 324px;
@@ -50,18 +63,19 @@ button{
     background: transparent;
     color: #ffffff;
     font-size: 23px;
-    box-shadow: -8px -8px 15px rgba(255, 255, 255, 0.1);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
     cursor: pointer;
 }
 .equalBtn{
     background-color: #fb7c14;
+    
     width: 234px;
     height:60px;
     border-radius: 20px;
 } /*Equal Button design*/
 
 .operator{
-    color: #6dee0a;
+    color: #0aee9e;
 }
 .operatorA{
     border: none;
@@ -70,9 +84,9 @@ button{
     margin: 7.7px;
     border-radius: 50%;
     background: transparent;
-    color: #6dee0a;
+    color: #0aeecc;
     font-size: 28px;
-    box-shadow: -8px -8px 15px rgba(255, 255, 255, 0.1);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
     cursor: pointer;
 }/*For Hexadecimal buttons*/
 .Mode{
@@ -84,6 +98,92 @@ button{
     background: transparent;
     color: #ffffff;
     font-size: 23px;
-    box-shadow: -8px -8px 15px rgba(255, 255, 255, 0.1);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25);
+    transition: all 0.3s ease;
     cursor: pointer;
 }/*For Mode buttons*/
+
+button:active {
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.25); 
+    transform: translateY(4px); 
+}/*Elevated Button style*/
+
+.colorpallet {
+    position: absolute;
+    top: 20px;
+    left: 23%;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
+    backdrop-filter: blur(10px); /* Blur the background */
+    border-radius: 15px;
+    display: flex;
+    /* flex-direction:column; */
+}
+
+.colorpallet button {
+    border: none;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%; /* This makes the button circular */
+    margin: 5px;
+    
+    
+}
+
+#light {
+    background: rgba(255, 255, 255, 0.852);
+}
+
+#violet {
+    background: linear-gradient(to right, rgb(15, 23, 42), rgb(88, 28, 135), rgb(15, 23, 42));
+}
+
+#dark {
+    background: linear-gradient(to left top, rgb(55, 65, 81), rgb(17, 24, 39), rgb(0, 0, 0));
+}
+/*colorpallete styles*/
+
+.welcomesection {
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 500px;
+    padding: 20px;
+    background: transparent;
+    color: #f8f8f8;
+    border-radius: 10px;
+   
+    text-align: center;
+    animation: slideInwel 2s ;
+}
+.welcomesection h1 {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+.welcomesection p {
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+/*Welcome section styles*/
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+@keyframes slideInwel {
+    0% {
+        left: -100%;
+    }
+    100% {
+        left: 30%; /* End at the middle of the screen */
+    }
+}
+/*animation for welcome section and the calculator*/
