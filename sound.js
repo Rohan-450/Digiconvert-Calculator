@@ -9,6 +9,7 @@ function playSound() {
 }
 function playSoundEqualBtn() {
     let clickSoundEqual = new Audio('./res/equal.mp3');
+    clickSoundEqual.volume = 0.3
     clickSoundEqual.play();
 }
 function playSoundModeBtn() {
