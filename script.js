@@ -1,39 +1,39 @@
-let mode = document.querySelectorAll('.Mode');                  //Selecting the different sets of buttons
+import * as filefunc from "./conversion.js";
+
 let letters = document.querySelectorAll('.operatorA');
 let numbers = document.querySelectorAll('.number');
 let inputs = document.querySelectorAll('input');
-let buttons = document.querySelectorAll('button');
+let mode = document.querySelectorAll('.Mode');               //Selecting the different sets of buttons
+let buttons = document.querySelectorAll('.button');
+console.log(buttons);
+let a;
+mode[1].addEventListener('click',() =>{              //When BIN button is clicked
 
-//Giving an Initial Value to the inputs, to avoid NaN 
-for(let i=0; i<=3;i++){
-    inputs[i].value = 0;
-}
-
-mode[1].addEventListener('click',() =>{                 //When BIN button is clicked
     for(let i=0; i<=3;i++){
         inputs[i].disabled = false;
         inputs[i].classList.remove('disable-text');
     }
-    inputs[1].focus();                              //Focus brought to the BIN textbox
+    a = inputs[1];
+    inputs[1].focus();              //Focus brought to the BIN textbox
     numbers.forEach((e)=>{
         e.classList.remove('disable');
         e.disabled = false;
     })
-    letters.forEach((e)=>{                          
+    letters.forEach((e)=>{
         e.classList.remove('disable');
         e.disabled = false;
     })
-    letters.forEach((e)=>{              //Disabling the Letter buttons
-        e.classList.add('disable');
+    letters.forEach((e)=>{
+        e.classList.add('disable');         //Disabling the Letter buttons
         e.disabled = true;
     })
-    numbers.forEach((e)=>{          //Disabling the numbers except 0, 1 and .
-        if(e.innerText != 0 && e.innerText != 1 && e.innerText != "."){
+    numbers.forEach((e)=>{
+        if(e.innerText != 0 && e.innerText != 1 && e.innerText != "."){             //Disabling the numbers except 0, 1 and .
             e.classList.add('disable');
             e.disabled = true;
         }
     })
-    for(let i=0; i<=3;i++){     //Disabling rest of the text boxes
+    for(let i=0; i<=3;i++){             //Disabling rest of the text boxes
         if(i != 1){
             inputs[i].disabled = true;
             inputs[i].classList.add('disable-text');
@@ -41,12 +41,13 @@ mode[1].addEventListener('click',() =>{                 //When BIN button is cli
     }
 });
 
-mode[0].addEventListener('click',() =>{     //When DEC button is clicked
+mode[0].addEventListener('click',() =>{             //When DEC button is clicked
     for(let i=0; i<=3;i++){
         inputs[i].disabled = false;
         inputs[i].classList.remove('disable-text');
     }
-    inputs[0].focus();       //Focus brought to the DEC textbox
+    a = inputs[0];
+    inputs[0].focus();              //Focus brought to the DEC textbox
     numbers.forEach((e)=>{
         e.classList.remove('disable');
         e.disabled = false;
@@ -55,11 +56,11 @@ mode[0].addEventListener('click',() =>{     //When DEC button is clicked
         e.classList.remove('disable');
         e.disabled = false;
     })
-    letters.forEach((e)=>{          //Disabling the Letter buttons
+    letters.forEach((e)=>{              //Disabling the Letter buttons
         e.classList.add('disable');
         e.disabled = true;
     })
-    for(let i=0; i<=3;i++){     //Disabling rest of the text boxes
+    for(let i=0; i<=3;i++){             //Disabling rest of the text boxes
         if(i != 0){
             inputs[i].disabled = true;
             inputs[i].classList.add('disable-text');
@@ -67,12 +68,13 @@ mode[0].addEventListener('click',() =>{     //When DEC button is clicked
     }
 });
 
-mode[2].addEventListener('click',() =>{     //When HEX button is clicked
+mode[2].addEventListener('click',() =>{             //When HEX button is clicked
     for(let i=0; i<=3;i++){
         inputs[i].disabled = false;
         inputs[i].classList.remove('disable-text');
     }
-    inputs[2].focus();      //Focus brought to the HEX textbox
+    a = inputs[2];
+    inputs[2].focus();              //Focus brought to the HEX textbox
     numbers.forEach((e)=>{
         e.classList.remove('disable');
         e.disabled = false;
@@ -81,7 +83,7 @@ mode[2].addEventListener('click',() =>{     //When HEX button is clicked
         e.classList.remove('disable');
         e.disabled = false;
     })
-    for(let i=0; i<=3;i++){         //Disabling rest of the text boxes
+    for(let i=0; i<=3;i++){             //Disabling rest of the text boxes
         if(i != 2){
             inputs[i].disabled = true;
             inputs[i].classList.add('disable-text');
@@ -89,12 +91,13 @@ mode[2].addEventListener('click',() =>{     //When HEX button is clicked
     }
 });
 
-mode[3].addEventListener('click',() =>{     //When OCT button is clicked
+mode[3].addEventListener('click',() =>{             //When OCT button is clicked
     for(let i=0; i<=3;i++){
         inputs[i].disabled = false;
         inputs[i].classList.remove('disable-text');
     }
-    inputs[3].focus();      //Focus brought to the OCT textbox
+    a = inputs[3];
+    inputs[3].focus();              //Focus brought to the OCT textbox
     numbers.forEach((e)=>{
         e.classList.remove('disable');
         e.disabled = false;
@@ -103,17 +106,17 @@ mode[3].addEventListener('click',() =>{     //When OCT button is clicked
         e.classList.remove('disable');
         e.disabled = false;
     })
-    letters.forEach((e)=>{
-        e.classList.add('disable');     //Disabling the Letter buttons
+    letters.forEach((e)=>{              //Disabling the Letter buttons
+        e.classList.add('disable');
         e.disabled = true;
     })
-    numbers.forEach((e)=>{       //Disabling the 8 and 9 buttons
+    numbers.forEach((e)=>{              //Disabling the 8 and 9 buttons
         if(e.innerText == 8 || e.innerText == 9){
             e.classList.add('disable');
             e.disabled = true;
         }
     })
-    for(let i=0; i<=3;i++){     //Disabling rest of the text boxes
+    for(let i=0; i<=3;i++){             //Disabling rest of the text boxes
         if(i != 3){
             inputs[i].disabled = true;
             inputs[i].classList.add('disable-text');
@@ -138,17 +141,38 @@ arr.forEach(button => {
             string = string.substring(0, string.length-1);
             inputs.forEach(input => input.value = string);
         }
-        //Not allowing DEC, BIN, OCT, HEX to be treated as an Input
-        else if(e.target.innerHTML != 'DEC' && e.target.innerHTML != 'BIN' && e.target.innerHTML != 'OCT' && e.target.innerHTML != 'HEX' ){
-            string += e.target.innerHTML;
-            inputs.forEach(input => input.value = string);
-        }
-        //Adding Functionality to mode[0] that is: DEC
-        if(!inputs[0].disabled)
-        {
-            inputs[1].value = Number(inputs[0].value).toString(2);
-            inputs[2].value = Number(inputs[0].value).toString(16).toUpperCase();   //HEX in Upper Case
-            inputs[3].value = Number(inputs[0].value).toString(8);
+        else{
+            if(a == inputs[0]){         
+                string += e.target.innerHTML;
+                inputs[0].value = string
+                inputs[1].value = filefunc.dectobin(parseInt(string))       //converting decimal to binary
+                inputs[2].value = filefunc.dectohex(parseInt(string))       //converting decimal to hexadecimal
+                inputs[3].value = filefunc.dectooct(parseInt(string))       //converting decimal to octal
+            }
+            else if(a == inputs[1]){
+                string += e.target.innerHTML;
+                inputs[1].value = string
+                inputs[0].value = filefunc.bintodec(parseInt(string))       //converting binary to decimal
+                inputs[2].value = filefunc.bintohex(parseInt(string))       //converting binary to hexadecimal
+                inputs[3].value = filefunc.bintooct(parseInt(string))       //converting binary to octal
+            }
+            else if(a == inputs[2]){
+                string += e.target.innerHTML;
+                inputs[2].value = string
+                inputs[0].value = filefunc.hextodec(string)     //converting hexadecimal to decimal
+                inputs[1].value = filefunc.hextobin(string)     //converting hexadecimal to binary
+                inputs[3].value = filefunc.hextooct(string)     //converting hexadecimal to octal
+            }
+            else if(a == inputs[3]){
+                string += e.target.innerHTML;
+                inputs[3].value = string
+                inputs[0].value = filefunc.octtodec(string)     //converting octal to decimal
+                inputs[1].value = filefunc.octtobin(string)     //converting octal to binary
+                inputs[2].value = filefunc.octtohex(string)     //converting octal to hexadecimal
+            }
+            else{
+                ;
+            }
         }
     })
 });

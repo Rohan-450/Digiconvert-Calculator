@@ -92,8 +92,8 @@ button{
 .disable{
     color: #525252;
     background-color: #373636;
-}/*For changing button colors dynamically when disabled*/
+}
 
 .disable-text{
     background: rgb(17, 73, 67);
-}/*For giving disabled effect to the other textboxes when one is focussed*/
+}
