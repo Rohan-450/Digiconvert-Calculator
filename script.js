@@ -152,7 +152,9 @@ arr.forEach((button) => {
       inputs[1].value = parseFloat(string).toString(2);
       inputs[2].value = parseFloat(string).toString(16);
       inputs[3].value = parseFloat(string).toString(8);
-      if (string.includes(".")) point.disabled = true;
+      if (inputs[0].value.includes(".")) point.disabled = true;
+      else
+      point.disabled=false;
     } else if (e.target.innerHTML == "AC") {
       string = "";
       inputs.forEach((input) => (input.value = string));
