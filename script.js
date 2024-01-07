@@ -1,4 +1,4 @@
-import * as filefunc from "./conversion.js";
+import * as filefunc from "./conversion_updated.js";
 
 
 let letters = document.querySelectorAll('.operatorA');
@@ -146,30 +146,30 @@ arr.forEach(button => {
             if (a == inputs[0]) {
                 string += e.target.innerHTML;
                 inputs[0].value = string
-                inputs[1].value = filefunc.dectobin(parseInt(string))       //converting decimal to binary
-                inputs[2].value = filefunc.dectohex(parseInt(string))       //converting decimal to hexadecimal
-                inputs[3].value = filefunc.dectooct(parseInt(string))       //converting decimal to octal
+                inputs[1].value = filefunc.decimalToBinary(string);              //converting decimal to binary
+                inputs[2].value = filefunc.decimalToHexadecimal(string);         //converting decimal to hexadecimal
+                inputs[3].value = filefunc.decimalToOctal(string);               //converting decimal to octal
             }
             else if (a == inputs[1]) {
                 string += e.target.innerHTML;
                 inputs[1].value = string
-                inputs[0].value = filefunc.bintodec(parseInt(string))       //converting binary to decimal
-                inputs[2].value = filefunc.bintohex(parseInt(string))       //converting binary to hexadecimal
-                inputs[3].value = filefunc.bintooct(parseInt(string))       //converting binary to octal
+                inputs[0].value = filefunc.binaryToDecimal(string);              //converting binary to decimal
+                inputs[2].value = filefunc.binaryToHexadecimal(string);          //converting binary to hexadecimal
+                inputs[3].value = filefunc.binaryToOctal(string);                //converting binary to octal
             }
             else if (a == inputs[2]) {
                 string += e.target.innerHTML;
                 inputs[2].value = string
-                inputs[0].value = filefunc.hextodec(string)     //converting hexadecimal to decimal
-                inputs[1].value = filefunc.hextobin(string)     //converting hexadecimal to binary
-                inputs[3].value = filefunc.hextooct(string)     //converting hexadecimal to octal
+                inputs[0].value = filefunc.hexadecimalToDecimal(string);        //converting hexadecimal to decimal
+                inputs[1].value = filefunc.hexadecimalToBinary(string);         //converting hexadecimal to binary
+                inputs[3].value = filefunc.hexadecimalToOctal(string);          //converting hexadecimal to octal
             }
             else if (a == inputs[3]) {
                 string += e.target.innerHTML;
                 inputs[3].value = string
-                inputs[0].value = filefunc.octtodec(string)     //converting octal to decimal
-                inputs[1].value = filefunc.octtobin(string)     //converting octal to binary
-                inputs[2].value = filefunc.octtohex(string)     //converting octal to hexadecimal
+                inputs[0].value = filefunc.octalToDecimal(string);              //converting octal to decimal
+                inputs[1].value = filefunc.octalToBinary(string);               //converting octal to binary
+                inputs[2].value = filefunc.octalToHexadecimal(string);          //converting octal to hexadecimal
             }
             else {
                 ;
