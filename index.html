@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="png" href="assets/favicon.png">
     <link rel="stylesheet" href="style.css" />
-    <script defer src="script.js" type="module"></script>
+
     <title>Digital Conversion Calculator</title>
 </head>
 <body>
@@ -14,16 +14,16 @@
         <div class="calculator">
             <!-- Display of Calculator -->
             <button class="Mode">DEC</button>
-            <input type="text" id="inputBox" class="t1" placeholder="0" />
+            <input type="text" id="inputBox" class="decinput" placeholder="0" />
             <br>
             <button class="Mode">BIN</button>
-            <input type="text" id="inputBox" placeholder="0" />
+            <input type="text" id="inputBox" class="bininput" placeholder="0" />
             <br>
             <button class="Mode">HEX</button>
-            <input type="text" id="inputBox" placeholder="0" />
+            <input type="text" id="inputBox" class="hexinput" placeholder="0" />
             <br>
             <button class="Mode">OCT</button>
-            <input type="text" id="inputBox" placeholder="0" />
+            <input type="text" id="inputBox" class="octinput" placeholder="0" />
             <br>
             <!-- Input buttons for Hexadecimal values -->
             <div>
@@ -45,15 +45,15 @@
                 <button class="button number">4</button>
                 <button class="button number">5</button>
                 <button class="button number">6</button>
-                <button class="button operator">*</button>
-                <button class="button operator">/</button>
+                <button class="button operator"id="multiply">*</button>
+                <button class="button operator" id="div">/</button>
             </div>
             <div>
                 <button class="button number">1</button>
                 <button class="button number">2</button>
                 <button class="button number">3</button>
-                <button class="button operator">+</button>
-                <button class="button operator">-</button>
+                <button class="button operator" id="plus">+</button>
+                <button class="button operator" id="minus">-</button>
             </div>
 
             <div>
@@ -82,7 +82,7 @@
                 <img id="welcome-icon" src="assets/icon1.png" alt="Welcome Icon">
                 </div> 
 <!-- welcomesection ends -->
-<script src="script.js"></script>
+<script type="module" src="script.js"></script>
 </body>
 
  
