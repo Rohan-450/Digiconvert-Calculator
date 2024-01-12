@@ -15,16 +15,16 @@
         <div class="calculator">
             <!-- Display of Calculator -->
             <button class="Mode">DEC</button>
-            <input type="text" id="inputBox" class="decinput" placeholder="0" />
+            <input type="text" id="inputBox" class="decinput" placeholder="0" onkeydown="disableKeyboardInput(event)" />
             <br>
             <button class="Mode">BIN</button>
-            <input type="text" id="inputBox" class="bininput" placeholder="0" />
+            <input type="text" id="inputBox" placeholder="0" />
             <br>
             <button class="Mode">HEX</button>
-            <input type="text" id="inputBox" class="hexinput" placeholder="0" />
+            <input type="text" id="inputBox" class="hexinput" placeholder="0" onkeydown="disableKeyboardInput(event)"/>
             <br>
             <button class="Mode">OCT</button>
-            <input type="text" id="inputBox" class="octinput" placeholder="0" />
+            <input type="text" id="inputBox" class="octinput" placeholder="0" onkeydown="disableKeyboardInput(event)"/>
             <br>
             <!-- Input buttons for Hexadecimal values -->
             <div>
@@ -84,6 +84,11 @@
                 </div> 
 <!-- welcomesection ends -->
 <script type="module" src="script.js"></script>
+<script>
+    function disableKeyboardInput(event) {
+            event.preventDefault();
+        }
+</script>
 </body>
 
  
