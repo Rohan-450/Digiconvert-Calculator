@@ -178,30 +178,18 @@ arr.forEach(button => {
     })
 });
 // Colourpallete functionality
-document.getElementById('light').addEventListener('click', function () {
-    document.body.style.background = 'rgba(255, 255, 255, 0.852)';
-    var buttons = document.querySelectorAll('button');
-    buttons.forEach(function (button) {
-        button.style.color = 'black';
-    });
-    document.body.style.color = '#333';
-    document.body.style.fontFamily = 'Arial, sans-serif';
-    buttons.forEach(function (button) {
 
-        button.style.border = 'none';
-        document.querySelector('.welcomesection').style.color = 'black';
-        document.querySelector('.colorpallet').style.background = 'rgba(52, 51, 51, 0.1)';
-    });
-});
 
 document.getElementById('violet').addEventListener('click', function () {
     document.body.style.background = 'linear-gradient(to right, rgb(15, 23, 42), rgb(88, 28, 135), rgb(15, 23, 42))';
     var buttons = document.querySelectorAll('button'); // Select all buttons
     buttons.forEach(function (button) {
-        button.style.color = '#fff'; // Change color to black
+        button.style.color = '#fff';
     });
     document.querySelector('.welcomesection').style.color = 'white';
     document.querySelector('.colorpallet').style.background = 'rgba(255, 255, 255, 0.1)';
+    document.querySelector('.disable').style.background.color = 'white';
+    document.querySelector('.disable').style.color = 'white';
 });
 
 
@@ -210,19 +198,12 @@ document.getElementById('dark').addEventListener('click', function () {
     document.body.style.background = 'linear-gradient(to left top, rgb(55, 65, 81), rgb(17, 24, 39), rgb(0, 0, 0))';
     var buttons = document.querySelectorAll('button'); // Select all buttons
     buttons.forEach(function (button) {
-        button.style.color = '#fff'; // Change color to black
+        button.style.color = '#fff'; 
     });
     document.querySelector('.welcomesection').style.color = 'white';
     document.querySelector('.colorpallet').style.background = 'rgba(255, 255, 255, 0.1)';
 });
-/* Changing icons */
-var icons = ['assets/icon1.png', 'assets/icon2.png', 'assets/icon3.png', 'assets/icon4.png', 'assets/icon5.png'];
-var iconIndex = 0;
 
-setInterval(function () {
-    iconIndex = (iconIndex + 1) % icons.length; // Cycle through the icons
-    document.getElementById('welcome-icon').src = icons[iconIndex];
-}, 5000); // Change every 5 seconds
 
 
 let m;
@@ -239,4 +220,20 @@ mode.forEach((modes) => {
             // console.log(2)
         }
     })
-})      
+})  
+//The loading screen    
+window.addEventListener('load', function () {
+    const welcome_screen = document.querySelector('.welcomesection');
+    setTimeout(function () {
+        welcome_screen.style.opacity = '0';
+        setTimeout(function () {
+            welcome_screen.style.display = 'none';
+        }, 5000); // This will execute after 5000 ms
+    }, 5000); // This will execute after 5000 ms
+});
+window.addEventListener('load', function () {
+    const calculator = document.querySelector('.calculator');
+    setTimeout(function () {
+        calculator.classList.add('slideIn');
+    }, 5000); // This will execute after 5000 ms 
+});

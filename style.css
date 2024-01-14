@@ -28,11 +28,15 @@ body{
     position: absolute;
     /* left: -100%;  */
     top: 20px;
-    animation: slideIn 2s forwards; 
+    right:40%;
     justify-content: center;
     align-items: center;
-    
+    visibility: hidden; 
     gap: 5px;
+}
+.calculator.slideIn {
+    animation: slideIn 2s forwards;
+    visibility: visible; /* Show the calculator when the animation starts */
 }
 input{
     width: 324px;
@@ -120,13 +124,14 @@ button:active {
 .colorpallet {
     position: absolute;
     top: 20px;
-    left: 23%;
+    
     padding: 10px;
     background: rgba(255, 255, 255, 0.1); /* Semi-transparent white */
     backdrop-filter: blur(10px); /* Blur the background */
     border-radius: 15px;
     display: flex;
     /* flex-direction:column; */
+    right:20%;
 }
 
 .colorpallet button {
@@ -139,9 +144,7 @@ button:active {
     
 }
 
-#light {
-    background: rgba(255, 255, 255, 0.852);
-}
+
 
 #violet {
     background: linear-gradient(to right, rgb(15, 23, 42), rgb(88, 28, 135), rgb(15, 23, 42));
@@ -155,7 +158,7 @@ button:active {
 .welcomesection {
     position: absolute;
     top: 50%;
-    left: 30%;
+    left: 50%;
     transform: translate(-50%, -50%);
     width: 80%;
     max-width: 500px;
@@ -165,14 +168,21 @@ button:active {
     border-radius: 10px;
    
     text-align: center;
-    animation: slideInwel 2s ;
+    animation: slideInwel 2s, fadeOut 2s 2s forwards;
 }
 .welcomesection h1 {
     font-size: 40px;
     font-weight: 700;
     margin-bottom: 20px;
+    overflow: hidden; 
+    border-right: .15em solid orange; /* The typwriter cursor */
+    white-space: nowrap;
+    margin: 0 auto; 
+    letter-spacing: .15em; 
+    animation: typing 3.5s steps(100, end), blink-caret .75s step-end infinite;
 }
 .welcomesection p {
+    margin-top: 10px;
     font-size: 20px;
     font-weight: 400;
     margin-bottom: 20px;
@@ -189,10 +199,30 @@ button:active {
 }
 @keyframes slideInwel {
     0% {
-        left: -100%;
+        opacity: 0;
     }
     100% {
-        left: 30%; 
+        opacity: 1;
     }
+}
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+/* The typing effect */
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange; }
 }
 /*animation for welcome section and the calculator*/
