@@ -127,49 +127,113 @@ mode[3].addEventListener('click', () => {             //When OCT button is click
 
 let string = "";
 let arr = Array.from(buttons);
+let operators = "+-*/";
+let f = 1;
+let savestring;
 arr.forEach(button => {
     button.addEventListener('click', (e) => {
         if (e.target.innerHTML == '=') {
-            string = eval(string);
-            inputs.forEach(input => input.value = string);
+            if (a == inputs[0]){
+                string = eval(string);
+                savestring = 0;
+            }
+            else if (a == inputs[1]){
+                const tokens = string.match(/\b[01.]+\b|[+\-*/]/g);
+                string = '';
+                for (let tok of tokens){
+                    if (operators.indexOf(tok)>=0){
+                        string+=tok;
+                    }
+                    else{
+                        string+=filefunc.binaryToDecimal(tok)
+                    }
+                }
+                string = eval(string);
+                savestring = 1;
+            }
+            else if (a == inputs[2]){
+                const tokens = string.match(/[+\-*/]|\b[0-9A-F.]+\b/g);
+                string = '';
+                for (let tok of tokens){
+                    if (operators.indexOf(tok)>=0){
+                        string+=tok;
+                    }
+                    else{
+                        string+=filefunc.hexadecimalToDecimal(tok)
+                    }
+                }
+                string = eval(string);
+                savestring = 2;
+            }
+            else if (a == inputs[3]){
+                const tokens = string.match(/[+\-*/]|\b[0-7.]+\b/g);
+                string = '';
+                for (let tok of tokens){
+                    if (operators.indexOf(tok)>=0){
+                        string+=tok;
+                    }
+                    else{
+                        string+=filefunc.octalToDecimal(tok)
+                    }
+                }
+                string = eval(string);
+                savestring = 3;
+            }
+            inputs[0].value = string;
+            inputs[1].value = filefunc.decimalToBinary(string);
+            inputs[2].value = filefunc.decimalToHexadecimal(string);
+            inputs[3].value = filefunc.decimalToOctal(string);
+            string = inputs[savestring].value;
         }
 
         else if (e.target.innerHTML == 'AC') {
             string = "";
             inputs.forEach(input => input.value = string);
         }
-        else if (e.target.innerHTML == 'DEL') {
-            string = string.substring(0, string.length - 1);
-            inputs.forEach(input => input.value = string);
-        }
         else {
-            if (a == inputs[0]) {
+            if (e.target.innerHTML == 'DEL'){
+                string = string.substring(0, string.length - 1);
+            }
+            else{
                 string += e.target.innerHTML;
+            }
+            if (operators.split('').some(char => string.includes(char))){
+                f=0;
+            }
+            else{
+                f=1;
+            }
+            if (a == inputs[0]) {
                 inputs[0].value = string
-                inputs[1].value = filefunc.decimalToBinary(string);              //converting decimal to binary
-                inputs[2].value = filefunc.decimalToHexadecimal(string);         //converting decimal to hexadecimal
-                inputs[3].value = filefunc.decimalToOctal(string);               //converting decimal to octal
+                if (f){
+                    inputs[1].value = filefunc.decimalToBinary(string);              //converting decimal to binary
+                    inputs[2].value = filefunc.decimalToHexadecimal(string);         //converting decimal to hexadecimal
+                    inputs[3].value = filefunc.decimalToOctal(string);               //converting decimal to octal
+                }
             }
             else if (a == inputs[1]) {
-                string += e.target.innerHTML;
                 inputs[1].value = string
-                inputs[0].value = filefunc.binaryToDecimal(string);              //converting binary to decimal
-                inputs[2].value = filefunc.binaryToHexadecimal(string);          //converting binary to hexadecimal
-                inputs[3].value = filefunc.binaryToOctal(string);                //converting binary to octal
+                if (f){
+                    inputs[0].value = filefunc.binaryToDecimal(string);              //converting binary to decimal
+                    inputs[2].value = filefunc.binaryToHexadecimal(string);          //converting binary to hexadecimal
+                    inputs[3].value = filefunc.binaryToOctal(string);                //converting binary to octal
+                }
             }
             else if (a == inputs[2]) {
-                string += e.target.innerHTML;
                 inputs[2].value = string
-                inputs[0].value = filefunc.hexadecimalToDecimal(string);        //converting hexadecimal to decimal
-                inputs[1].value = filefunc.hexadecimalToBinary(string);         //converting hexadecimal to binary
-                inputs[3].value = filefunc.hexadecimalToOctal(string);          //converting hexadecimal to octal
+                if (f){
+                    inputs[0].value = filefunc.hexadecimalToDecimal(string);        //converting hexadecimal to decimal
+                    inputs[1].value = filefunc.hexadecimalToBinary(string);         //converting hexadecimal to binary
+                    inputs[3].value = filefunc.hexadecimalToOctal(string);          //converting hexadecimal to octal
+                }
             }
             else if (a == inputs[3]) {
-                string += e.target.innerHTML;
                 inputs[3].value = string
-                inputs[0].value = filefunc.octalToDecimal(string);              //converting octal to decimal
-                inputs[1].value = filefunc.octalToBinary(string);               //converting octal to binary
-                inputs[2].value = filefunc.octalToHexadecimal(string);          //converting octal to hexadecimal
+                if (f){
+                    inputs[0].value = filefunc.octalToDecimal(string);              //converting octal to decimal
+                    inputs[1].value = filefunc.octalToBinary(string);               //converting octal to binary
+                    inputs[2].value = filefunc.octalToHexadecimal(string);          //converting octal to hexadecimal
+                }
             }
             else {
                 ;
