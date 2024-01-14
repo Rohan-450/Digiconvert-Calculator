@@ -129,11 +129,13 @@ let string = "";
 let arr = Array.from(buttons);
 let operators = "+-*/";
 let f = 1;
+let savestring;
 arr.forEach(button => {
     button.addEventListener('click', (e) => {
         if (e.target.innerHTML == '=') {
             if (a == inputs[0]){
                 string = eval(string);
+                savestring = 0;
             }
             else if (a == inputs[1]){
                 const tokens = string.match(/\b[01.]+\b|[+\-*/]/g);
@@ -147,6 +149,7 @@ arr.forEach(button => {
                     }
                 }
                 string = eval(string);
+                savestring = 1;
             }
             else if (a == inputs[2]){
                 const tokens = string.match(/[+\-*/]|\b[0-9A-F.]+\b/g);
@@ -160,6 +163,7 @@ arr.forEach(button => {
                     }
                 }
                 string = eval(string);
+                savestring = 2;
             }
             else if (a == inputs[3]){
                 const tokens = string.match(/[+\-*/]|\b[0-7.]+\b/g);
@@ -173,11 +177,13 @@ arr.forEach(button => {
                     }
                 }
                 string = eval(string);
+                savestring = 3;
             }
             inputs[0].value = string;
             inputs[1].value = filefunc.decimalToBinary(string);
             inputs[2].value = filefunc.decimalToHexadecimal(string);
             inputs[3].value = filefunc.decimalToOctal(string);
+            string = inputs[savestring].value;
         }
 
         else if (e.target.innerHTML == 'AC') {
