@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -10,7 +11,18 @@
     <script defer src="sound.js" type="module"></script>
     <title>Digital Conversion Calculator</title>
 </head>
+
 <body>
+    <!-- /* Colour Pallete Start */ -->
+    <div class="btn-mode">
+        <div class="colorpallet">
+
+            <button id="violet"></button>
+            <button id="dark"></button>
+        </div>
+    </div>
+    <!-- /* Colour Pallete End */ -->
+
     <div class="container">
         <div class="calculator">
             <!-- Display of Calculator -->
@@ -18,13 +30,13 @@
             <input type="text" id="inputBox" class="t1" placeholder="0" onkeydown="disableKeyboardInput(event)" />
             <br>
             <button class="Mode">BIN</button>
-            <input type="text" id="inputBox" placeholder="0" onkeydown="disableKeyboardInput(event)"/>
+            <input type="text" id="inputBox" placeholder="0" onkeydown="disableKeyboardInput(event)" />
             <br>
             <button class="Mode">HEX</button>
-            <input type="text" id="inputBox" placeholder="0" onkeydown="disableKeyboardInput(event)"/>
+            <input type="text" id="inputBox" placeholder="0" onkeydown="disableKeyboardInput(event)" />
             <br>
             <button class="Mode">OCT</button>
-            <input type="text" id="inputBox" placeholder="0" onkeydown="disableKeyboardInput(event)"/>
+            <input type="text" id="inputBox" placeholder="0" onkeydown="disableKeyboardInput(event)" />
             <br>
             <!-- Input buttons for Hexadecimal values -->
             <div>
@@ -35,7 +47,7 @@
                 <button class="button operatorA">E</button>
                 <button class="button operatorA">F</button>
             </div>
-            <div> 
+            <div>
                 <button class="button number">7</button>
                 <button class="button number">8</button>
                 <button class="button number">9</button>
@@ -63,41 +75,34 @@
                 <button class="button equalBtn">=</button>
             </div>
         </div>
-    
-    
+
+
     </div>
 
-<!-- /* Colour Pallete Start */ -->
-            <div class="colorpallet">
-                
-                <button id="violet"></button>
-                <button id="dark"></button>
 
+    <!-- welcomesection Start -->
+    <div class="welcomesection">
+        <h1>Welcome User!
 
-            </div>
-<!-- /* Colour Pallete End */ -->
-<!-- welcomesection Start -->
-            <div class="welcomesection">
-                <h1>Welcome User!
+        </h1>
+        <p>🚀 Initializing...<br>
 
-                    </h1>
-                <p>🚀 Initializing...<br>
-                    
-                    🔢 Explore the power of DigiConverter Calculator, your all-in-one tool for base conversion, addition, subtraction, multiplication, and division. <br>
-                    
-                    💡 Tip: Simply enter your numbers and choose the base.<br><br>
-                    
-                    🎉 Let the calculations begin!</p>
-                
-                </div> 
-<!-- welcomesection ends -->
-<script src="script.js"></script>
-<script>
-    function disableKeyboardInput(event) {
+            🔢 Explore the power of DigiConverter Calculator, your all-in-one tool for base conversion, addition,
+            subtraction, multiplication, and division. <br>
+
+            💡 Tip: Simply enter your numbers and choose the base.<br><br>
+
+            🎉 Let the calculations begin!</p>
+
+    </div>
+    <!-- welcomesection ends -->
+    <script src="script.js"></script>
+    <script>
+        function disableKeyboardInput(event) {
             event.preventDefault();
         }
-</script>
+    </script>
 </body>
 
- 
+
 </html>
