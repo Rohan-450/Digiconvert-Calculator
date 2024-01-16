@@ -1,7 +1,5 @@
-![image](https://github.com/apu52/Digiconvert-Calculator/assets/114172928/0b124077-981f-4f36-a220-9d8767d333cd)
 
-
-<h1 align="center">Digiconvert-Calculator </h1>
+<h1 align="center"><span><img src="https://media.giphy.com/media/V3vf6eIpaDcClOLgtH/giphy.gif" alt="Alt Text" width="40"/> &nbsp;Digiconvert-Calculator</span></h1>
 
 <div align="center">
  <p>
@@ -35,7 +33,9 @@ I welcome you all to contribute in this repository & make this a grand project. 
 
 # Demo
 
-![image](https://github.com/apu52/Digiconvert-Calculator/assets/114172928/8f06695f-b88d-4ef3-b192-0d9cad539685)
+<center><img src="https://github.com/abhraneel2004/Digiconvert-Calculator/assets/115551450/3a377176-f4c7-41ca-a171-90e5e4bc466c" width="30%"></center>
+<center><img src="https://github.com/abhraneel2004/Digiconvert-Calculator/assets/115551450/a6c2623e-1418-4ff1-bd45-bfddb8e49cf0" width="31%"></center>
+
 
 <h2>Contributing Guidelines📑</h2>
 
@@ -98,6 +98,47 @@ Read our [Contributing Guidelines](https://github.com/Rohan-450/Digiconvert-Calc
     ```
 -   Add your project name with the link in the readme in the desired format.
 -   Make a pull request! (compare your branch with the owner main branch)
+
+
+## Syncing with Upstream
+
+If the original repository has been updated, sync your fork to include the latest changes:
+
+1. **Add Upstream Remote:**
+   - Add the upstream repository as a remote.
+     ```bash
+     git remote add upstream https://github.com/original-username/flutter-project.git
+     ```
+
+2. **Fetch Upstream Changes:**
+   - Fetch the changes from the upstream repository.
+     ```bash
+     git fetch upstream
+     ```
+
+3. **Merge Upstream Changes:**
+   - Merge the changes from the upstream repository into your local branch.
+     ```bash
+     git merge upstream/main
+     ```
+
+4. **Push Changes to Your Fork:**
+   - Push the updated changes to your fork on GitHub.
+     ```bash
+     git push origin main
+     ```
+
+## We Encourage Your Contribution!
+
+This project thrives on community contributions. Whether you're fixing a bug, implementing a new feature, or enhancing documentation, your efforts are highly appreciated. Join us in making this Flutter project even better!
+
+<span> <img src ="https://media.giphy.com/media/cCOVfFwDI3awdse5A3/giphy.gif" width="5%"> Happy coding!</span>
+
+
+<center> <img src ="https://media.giphy.com/media/10zxDv7Hv5RF9C/giphy.gif" width="100%"> </center>
+
+
+
 
  <h4 align="center">
    <img src="https://forthebadge.com/images/badges/built-with-love.svg" alt="Built with love" /><br>
