@@ -107,7 +107,7 @@ If the original repository has been updated, sync your fork to include the lates
 1. **Add Upstream Remote:**
    - Add the upstream repository as a remote.
      ```bash
-     git remote add upstream https://github.com/original-username/flutter-project.git
+     git remote add upstream https://github.com/Rohan-450/Digiconvert-Calculator.git
      ```
 
 2. **Fetch Upstream Changes:**
