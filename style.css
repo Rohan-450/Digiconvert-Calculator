@@ -47,8 +47,14 @@ body {
     /* Show the calculator when the animation starts */
 }
 
+.input-box{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
 input {
-    width: 324px;
+    width: 270px;
     height: 55px;
     border: none;
     padding: 10px;
@@ -68,8 +74,21 @@ input::placeholder {
     color: #ffffff;
 }
 
-#inputBox {
+/* #inputBox {
     color: rgb(255, 255, 255);
+} */
+
+.opcode{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    width: 50px;
+}
+
+.button-collection{
+    display: flex;
+    justify-content: space-evenly;
 }
 
 button {
@@ -323,13 +342,18 @@ button:active {
     }
 
     .Mode {
-        width: 27px;
-        height: 27px;
+        width: 35px;
+        height: 35px;
         font-size: 10px;
     }
 
+    .opcode{
+        width: 35px;
+        height: 35px;
+    }
+
     #inputBox {
-        width: 280px;
+        width: 80%;
         height: 37px;
     }
 
