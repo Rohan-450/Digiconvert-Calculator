@@ -25,20 +25,35 @@
     <div class="container">
         <div class="calculator">
             <!-- Display of Calculator -->
-            <button class="Mode">DEC</button>
-            <input type="text" id="inputBox" class="t1" placeholder="0" onkeydown="disableKeyboardInput(event)" />
+            
+            <div class="input-box">
+                <button class="Mode">DEC</button>
+                <input type="text" class="opcode" onkeydown="disableKeyboardInput(event)"/>
+                <input type="text" id="inputBox" class="input" placeholder="0" onkeydown="disableKeyboardInput(event)" />
+            </div>
+            <!-- <input type="text" id="inputBox" class="t1" placeholder="0" /> -->
             <br>
-            <button class="Mode">BIN</button>
-            <input type="text" id="inputBox" placeholder="0" onkeydown="disableKeyboardInput(event)" />
+
+            <div class="input-box">
+                <button class="Mode">BIN</button>
+                <input type="text" class="opcode" onkeydown="disableKeyboardInput(event)"/>
+                <input type="text" id="inputBox" class="input" placeholder="0" onkeydown="disableKeyboardInput(event)"/>
+            </div>
             <br>
-            <button class="Mode">HEX</button>
-            <input type="text" id="inputBox" placeholder="0" onkeydown="disableKeyboardInput(event)" />
+            <div class="input-box">
+                <button class="Mode">HEX</button>
+                <input type="text" class="opcode" onkeydown="disableKeyboardInput(event)"/>
+                <input type="text" id="inputBox" class="input" placeholder="0" onkeydown="disableKeyboardInput(event)"/>
+            </div>
             <br>
-            <button class="Mode">OCT</button>
-            <input type="text" id="inputBox" placeholder="0" onkeydown="disableKeyboardInput(event)" />
+            <div class="input-box">
+                <button class="Mode">OCT</button>
+                <input type="text" class="opcode" onkeydown="disableKeyboardInput(event)"/>
+                <input type="text" id="inputBox" class="input" placeholder="0" onkeydown="disableKeyboardInput(event)"/>
+            </div>
             <br>
             <!-- Input buttons for Hexadecimal values -->
-            <div>
+            <div class="button-collection">
                 <button class="button operatorA">A</button>
                 <button class="button operatorA">B</button>
                 <button class="button operatorA">C</button>
@@ -46,21 +61,21 @@
                 <button class="button operatorA">E</button>
                 <button class="button operatorA">F</button>
             </div>
-            <div>
+            <div class="button-collection"> 
                 <button class="button number">7</button>
                 <button class="button number">8</button>
                 <button class="button number">9</button>
                 <button class="button operator">DEL</button>
                 <button class="button operator">AC</button>
             </div>
-            <div>
+            <div class="button-collection">
                 <button class="button number">4</button>
                 <button class="button number">5</button>
                 <button class="button number">6</button>
                 <button class="button operator">*</button>
                 <button class="button operator">/</button>
             </div>
-            <div>
+            <div class="button-collection">
                 <button class="button number">1</button>
                 <button class="button number">2</button>
                 <button class="button number">3</button>
@@ -68,14 +83,14 @@
                 <button class="button operator">-</button>
             </div>
 
-            <div>
+            <div class="button-collection">
                 <button class="button number">.</button>
                 <button class="button number">0</button>
                 <button class="button equalBtn">=</button>
             </div>
         </div>
-
-
+    
+    
     </div>
 
 
